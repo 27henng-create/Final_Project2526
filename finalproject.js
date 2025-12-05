@@ -11,6 +11,7 @@
 
     // OPTIONAL: Have many different themes like "video game characters", "phrases", etc.
 
-let WordChoice = ["Stove", "Guitar", "Badin High School", ""]
+let WordChoice = ["Stove", "Guitar", "Badin High School", "Stool", "Egg", "Metal", "Television", "Programming", 
+    "Artificial Intelligence", "Museum"];
 
 let a = prompt("Please Enter a Letter To Guess")
