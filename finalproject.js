@@ -13,5 +13,19 @@
 
 let WordChoice = ["Stove", "Guitar", "Badin High School", "Stool", "Egg", "Metal", "Television", "Programming", 
     "Artificial Intelligence", "Museum"];
+x = Math.floor(Math.random());
+let playerscore = 0;
+let playerChoice
+while(playerscore < 6){
+    WordChoice[x]
+    playerChoice = prompt("Please Enter a Letter") .toLowerCase();
 
-let a = prompt("Please Enter a Letter To Guess")
+    if(playerChoice = WordChoice){
+        console.log(`You Guessed the word! The final word was ${WordChoice}!`)
+    } else {
+        console.log(`The letter ${playerChoice} was not in the word.`)
+        alert(`The letter ${playerChoice} was not in the word`)
+        playerscore += 1
+    }
+    playerChoice = 0
+}
