@@ -13,16 +13,22 @@
 
 let WordChoice = ["Stove", "Guitar", "Badin High School", "Stool", "Egg", "Metal", "Television", "Programming", 
     "Artificial Intelligence", "Museum"];
-x = Math.floor(Math.random());
+let x = Math.floor(10 * Math.random());
 let playerscore = 0;
-let playerChoice
+let playerChoice;
+let playerAnswer;
+console.log(WordChoice[x]);
 while(playerscore < 6){
-    WordChoice[x]
-    playerChoice = prompt("Please Enter a Letter") .toLowerCase();
-
-    if(playerChoice = WordChoice){
+    if(playerAnswer != WordChoice[x]){
+        playerChoice = prompt("Please Enter a Letter") .toLowerCase();
+    } else if(playerAnswer == WordChoice[x]){
         console.log(`You Guessed the word! The final word was ${WordChoice}!`)
-    } else {
+        break;
+    }
+    // have it go through each letter in the word and see if the player guesses that letter correctly
+    // list out current game board aka the dashes
+    // then have the computer replace the dashes with the CORRECT letters
+    {
         console.log(`The letter ${playerChoice} was not in the word.`)
         alert(`The letter ${playerChoice} was not in the word`)
         playerscore += 1
