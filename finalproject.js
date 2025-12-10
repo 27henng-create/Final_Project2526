@@ -18,13 +18,19 @@ let playerscore = 0;
 let playerChoice;
 let playerAnswer;
 console.log(WordChoice[x]);
+//loop -> go through each letter of wordchoice and make a "-" in "playerAnswer" that corresponds to it
+
+while(WordChoice[x].charAt){
+    console.log(x)
+}
+
 while(playerscore < 6){
     if(playerAnswer != WordChoice[x]){
         playerChoice = prompt("Please Enter a Letter") .toLowerCase();
     } else if(playerAnswer == WordChoice[x]){
         console.log(`You Guessed the word! The final word was ${WordChoice}!`)
         break;
-    }
+    } 
     // have it go through each letter in the word and see if the player guesses that letter correctly
     // list out current game board aka the dashes
     // then have the computer replace the dashes with the CORRECT letters
