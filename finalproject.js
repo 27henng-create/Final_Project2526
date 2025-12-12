@@ -28,6 +28,7 @@ while(i < WordChoice[x].length){
         playerAnswer += "-";
     }
     console.log(WordChoice[x].charAt(i));
+    alert(playerAnswer);
     i += 1;
 } 
 
@@ -47,15 +48,19 @@ while(playerscore < 6){
     } else {
         console.log(`The string does not include the letter ${playerChoice}`)
         alert(`The string does not include the letter ${playerChoice}`)
+        playerscore +=1
+    } 
+    //playerChoice = 0
+
+    if(WordChoice[x].includes(playerChoice){
+        
     }
-    // have it go through each letter in the word and see if the player guesses that letter correctly
-    // list out current game board aka the dashes
+
+    if(playerscore == 6){
+        console.log(`The final word was ${WordChoice[x]}`)
+        alert(`The final word was ${WordChoice[x]}`)
+        break;
+    }
     // then have the computer replace the dashes with the CORRECT letters
-    {
-        // console.log(`The letter ${playerChoice} was not in the word.`)
-        // alert(`The letter ${playerChoice} was not in the word`)
-        playerscore += 1
-    }
-    playerChoice = 0
 }
 
