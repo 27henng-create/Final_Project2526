@@ -48,12 +48,15 @@ while(playerscore < 6){
     } else {
         console.log(`The string does not include the letter ${playerChoice}`)
         alert(`The string does not include the letter ${playerChoice}`)
+        alert(playerAnswer)
         playerscore +=1
     } 
     //playerChoice = 0
 
-    if(WordChoice[x].includes(playerChoice){
+    if(WordChoice[x].includes(playerChoice)){
         
+        console.log(playerAnswer)
+        alert(playerAnswer)
     }
 
     if(playerscore == 6){
