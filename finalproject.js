@@ -53,8 +53,10 @@ while(playerscore < 6){
     } 
     //playerChoice = 0
 
-    if(WordChoice[x].includes(playerChoice)){
-        WordChoice[x].replace(playerAnswer)
+    while(WordChoice[x].includes(playerChoice)){
+        if(WordChoice[x].charAt(i) == playerChoice){
+            playerAnswer += WordChoice[x]
+        }
         console.log(playerAnswer)
         alert(playerAnswer)
     }
