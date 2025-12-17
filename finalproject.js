@@ -54,7 +54,7 @@ while(playerscore < 6){
     //playerChoice = 0
 
     if(WordChoice[x].includes(playerChoice)){
-        
+        WordChoice[x].replace(playerAnswer)
         console.log(playerAnswer)
         alert(playerAnswer)
     }
