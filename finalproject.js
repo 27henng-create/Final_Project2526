@@ -16,16 +16,17 @@ let WordChoice = ["stove", "guitar", "badin high school", "stool", "egg", "metal
 let x = Math.floor(10 * Math.random());
 let playerscore = 0;
 let playerChoice;
-let playerAnswer = "";
+let playerAnswer = [];
+let test;
 console.log(WordChoice[x]);
 //loop -> go through each letter of wordchoice and make a "-" in "playerAnswer" that corresponds to it
 
 i = 0;
 while(i < WordChoice[x].length){
     if(WordChoice[x].charAt(i) == " "){
-        playerAnswer += " ";
+        playerAnswer.push(" ");
     } else {
-        playerAnswer += "-";
+        playerAnswer.push("-");
     }
     console.log(WordChoice[x].charAt(i));
     alert(playerAnswer);
@@ -52,27 +53,26 @@ while(playerscore < 6){
         playerscore +=1
     } 
     //playerChoice = 0
-    let tempstring = ' ';
         if(WordChoice[x].includes(playerChoice)){
             for(let i = 0; i < WordChoice[x].length; i++) {
             if(WordChoice[x].charAt(i) == playerChoice) { 
-                tempstring += playerChoice;
-            } else {
-            tempstring += '-';
-            }
+                playerAnswer[i] = playerChoice;
+            } 
         }
-        playerAnswer = tempstring;
         console.log(playerAnswer)
         alert(playerAnswer)
     } else {
     }
+    if(playerAnswer[i] == WordChoice[x]){
+        console.log(`Good Job! You guessed the word. The finall word was ${WordChoice[x]}`)
+        alert(`Good Job! You guessed the word. The finall word was ${WordChoice[x]}`)
+        break;
     }
-
+    }
     if(playerscore == 6){
         console.log(`The final word was ${WordChoice[x]}`)
         alert(`The final word was ${WordChoice[x]}`)
         i += 1
     }
-    // then have the computer replace the dashes with the CORRECT letters
 
 
