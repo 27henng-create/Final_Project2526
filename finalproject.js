@@ -18,7 +18,6 @@ let playerscore = 0;
 let playerChoice;
 let playerAnswer = [];
 let test;
-console.log(WordChoice[x]);
 //loop -> go through each letter of wordchoice and make a "-" in "playerAnswer" that corresponds to it
 
 i = 0;
@@ -28,18 +27,29 @@ while(i < WordChoice[x].length){
     } else {
         playerAnswer.push("-");
     }
-    console.log(WordChoice[x].charAt(i));
-    alert(playerAnswer);
+    // console.log(WordChoice[x].charAt(i));
+    // alert(playerAnswer);
     i += 1;
 } 
 
 console.log(playerAnswer);
 
+let tempString;
+
 while(playerscore < 6){
-    if(playerAnswer != WordChoice[x]){
+    test = 0;
+    for(let i = 0; i < WordChoice[x].length; i++){
+        if(playerAnswer[i] != WordChoice[x].charAt(i)){
+            test = 1;
+            break;
+        }
+    }
+    
+    if(test == 1){
         playerChoice = prompt("Please Enter a Letter").toLowerCase();
-    } else if(playerAnswer == WordChoice[x]){
-        console.log(`You Guessed the word! The final word was ${WordChoice}!`)
+    } else {
+        console.log(`You Guessed the word! The final word was ${WordChoice[x]}!`);
+        alert(`You Guessed the word! The final word was ${WordChoice[x]}!`);
         break;
     }
     
@@ -49,7 +59,12 @@ while(playerscore < 6){
     } else {
         console.log(`The string does not include the letter ${playerChoice}`)
         alert(`The string does not include the letter ${playerChoice}`)
-        alert(playerAnswer)
+        tempString = '';
+        for(let i = 0; i < playerAnswer.length; i++){
+            tempString += playerAnswer[i];
+        }
+        console.log(playerAnswer)
+        alert(tempString)
         playerscore +=1
     } 
     //playerChoice = 0
@@ -59,11 +74,17 @@ while(playerscore < 6){
                 playerAnswer[i] = playerChoice;
             } 
         }
+
+        tempString = '';
+        for(let i = 0; i < playerAnswer.length; i++){
+            tempString += playerAnswer[i];
+        }
         console.log(playerAnswer)
-        alert(playerAnswer)
+        alert(tempString)
     } else {
     }
     if(playerAnswer[i] == WordChoice[x]){
+
         console.log(`Good Job! You guessed the word. The finall word was ${WordChoice[x]}`)
         alert(`Good Job! You guessed the word. The finall word was ${WordChoice[x]}`)
         break;
