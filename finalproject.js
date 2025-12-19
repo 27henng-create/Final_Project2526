@@ -52,18 +52,27 @@ while(playerscore < 6){
         playerscore +=1
     } 
     //playerChoice = 0
+    let tempstring = ' ';
         if(WordChoice[x].includes(playerChoice)){
-            playerAnswer.replace(WordChoice[x].charAt(i))
+            for(let i = 0; i < WordChoice[x].length; i++) {
+            if(WordChoice[x].charAt(i) == playerChoice) { 
+                tempstring += playerChoice;
+            } else {
+            tempstring += '-';
+            }
         }
+        playerAnswer = tempstring;
         console.log(playerAnswer)
         alert(playerAnswer)
+    } else {
+    }
     }
 
     if(playerscore == 6){
         console.log(`The final word was ${WordChoice[x]}`)
         alert(`The final word was ${WordChoice[x]}`)
-        break;
+        i += 1
     }
     // then have the computer replace the dashes with the CORRECT letters
-}
+
 
