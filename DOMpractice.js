@@ -36,7 +36,7 @@ container.insertBefore(p, controls);
 console.log(container);
 
 // container.removeChild(display);
-// console.llog(container);
+// console.log(container);
 
 // we can add text content to something
 p.textContent = "Here's text that I'm adding to show I can."
@@ -49,3 +49,37 @@ p.style.color = "blue"
 // can use .style.cssText:
 controls.style.cssText = "color: darkgreen; background: blue";
 
+p.setAttribute("style", "color: #FF69B4; background: yellow");
+
+// if you are accessing a kebab case CSS property like
+// background-color, you need to use either dot notation
+// with camel case OR bracket notation as strings:
+//  p.styles.backgroundColor = "green";
+//  p.style["background-color"] = "green";
+//  p.style["backgroundColor"] = "green";
+
+p.setAttribute("class", "text");
+// setAttribute will change a class that exists, or add a class if exists;
+p.setAttribute("class", "paragraph");
+// p,setAttribute("class", "text paragraph");
+
+// p.getAttribute("class");
+// console.log(p.getAttribute("class"));
+
+p.removeAttribute("class");
+
+// in part, because classes can frequently hold multiple
+// values, and setAttribute rewrites the whole attribute,
+// it is frequently better to use class specific methods:
+
+p.classList.add("text");
+console.log(p.getAttribute("class"));
+
+p.classList.add("wrongClass");
+console.log(p.getAttribute("class"));
+
+p.classList.remove("wrongClass");
+console.log(p.getAttribute("class"));
+
+p.classList.toggle("inactive");
+console.log(p.getAttribute("class");)
