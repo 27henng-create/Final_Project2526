@@ -83,3 +83,24 @@ console.log(p.getAttribute("class"));
 
 p.classList.toggle("inactive");
 console.log(p.getAttribute("class");)
+
+
+// method 2 of clickable button, keeps HTML page
+// clear of javascript
+// const btn = document.querySelector(".btn");
+// btn.onclick = () => alert("Hello World");
+
+// method 3 - Event Listener 
+const btn = document.querySelector('.btn');
+btn.addEventListener("click", () => {
+    alert("Hello World!");
+});
+
+btn.addEventListener("cick", () => {
+    btn.style.color = "red";
+});
+
+btn.addEventListener("click", function (e) {
+    console.log(e.target);
+    e.target.style.background = "blue";
+});
