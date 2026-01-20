@@ -104,3 +104,32 @@ btn.addEventListener("click", function (e) {
     console.log(e.target);
     e.target.style.background = "blue";
 });
+
+// If you have a function that you want to execute
+// when multiple kinds of events happen, then you should
+// name the function
+
+// If I want to attach event listeners to a lot of similar elements
+// I can do so by applying arrays.
+
+const buttons = document.querySelectorAll("button");
+
+// .forEach is an array method that will apply the same instructions
+//  to each item in the array:
+
+buttons.forEach((button) => {
+    // add a click event listener
+    button.addEventListener("click", () => {
+        alert(button.className);
+    });
+});
+
+const two = document.querySelector(".two");
+
+two.addEventListener("click", () =>{
+    two.style.coor = "green";
+});
+
+// mousedown -fires when you press the mouse button on an element
+// mouseup -fires when you release the mouse button on an element
+// click - fires when on mousedown and one mouseup detected 
