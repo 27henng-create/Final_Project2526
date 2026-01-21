@@ -132,4 +132,27 @@ two.addEventListener("click", () =>{
 
 // mousedown -fires when you press the mouse button on an element
 // mouseup -fires when you release the mouse button on an element
-// click - fires when on mousedown and one mouseup detected 
+// click - fires when on mousedown and one mouseup detected on the
+//              same element
+
+const three = document.querySelector(".three");
+
+three.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
+three.addEventListener('mouseover', (e) => {
+    // console.log(e.button);
+    if (e.shiftKey){
+        console.log("shift");
+    }
+});
+
+
+let track = document.querySelector('.track');
+track.addEventListener('mousemove', (e) => {
+    let log = document.querySelector(".log");
+    log.innerText = `
+    Screen X/Y: (${e.screenX}, ${e.screenY})
+    Client X/Y: (${e.clientX}, ${e.clientY})`
+});
