@@ -82,7 +82,7 @@ p.classList.remove("wrongClass");
 console.log(p.getAttribute("class"));
 
 p.classList.toggle("inactive");
-console.log(p.getAttribute("class");)
+console.log(p.getAttribute("class"));
 
 
 // method 2 of clickable button, keeps HTML page
@@ -151,8 +151,73 @@ three.addEventListener('mouseover', (e) => {
 
 let track = document.querySelector('.track');
 track.addEventListener('mousemove', (e) => {
-    let log = document.querySelector(".log");
+    let log = document.querySelector('.log');
     log.innerText = `
     Screen X/Y: (${e.screenX}, ${e.screenY})
     Client X/Y: (${e.clientX}, ${e.clientY})`
 });
+
+
+// Better Approach - event bubbling
+
+let menu = document.querySelector('#menu');
+
+document.addEventListener('click', (e) => {
+    let target = e.target;
+
+    switch(target.id){
+        case 'home' :
+            console.log("Home menu item selected");
+            break;
+        case 'dashboard' :
+            console.log("Dashboard item clicked");
+            break;
+        case 'report':
+            console.log("Report menu item clicked");
+    }
+})
+
+
+// CUSTOM EVENTS:
+
+// function highlight(elem) {
+//     elem.style.backgroundColor = 'yellow';
+// }
+
+// next we use a callback. A callback is a function
+// that is the input of another function
+
+function highlight(elem, callback) {
+    elem.style.backgroundColor = 'yellow';
+
+    if(callback && typeof callback === 'function') {
+        callback(elem);
+    }
+}
+
+let menuItem = document.querySelector('.menuItem');
+function addBorder(elem){
+    elem.style.border = "soil 1px red";
+}
+
+highlight(menuItem, addBorder);
+
+
+// let event = new CustomEvent(eventType, options);
+//      eventType: name of new event
+//      options has the "detail" property that contains
+//              any custom information about the event
+
+let event = new CustomEvent('mark', {
+    detail: {backgroundColor: 'yellow'}
+});
+
+function highlight2(elem) {
+    elem.style.backgroundColor = 'yellow';
+
+    let event = new CustomEvent('mark', {
+        detail: {backgroundColor: 'yellow'}
+    });
+
+    elem.dispatchEvent(event);
+}
