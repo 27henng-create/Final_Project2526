@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8:>
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link Irel="stylesheet" href="styles.css">
+</head>
+<body>
+        <div class="container">
+                <div class="display">This is an image of a game screen, 
+                                        or a video player</div>
+                <div class="controls">This holds buttons that either play the game 
+                                        or control playback</div>
+        </div>
+        <!-- In the above, "display" is a child of "container"
+        and a sibling of "controls". I can think of this like a family tree, 
+        and as I move down, subsequesnt children spread out. -->
+
+        <div class = "container2">
+                <button class="btn">Click Me</button>
+                <button class="one">Click Me</button>
+                <button class="two">Click Me</button>
+                <button class="three">Click Me</button>
+        </div>
+        <!-- Event Bubbling:    If I click the button 2, the button element gets the
+                signal, and then it "bubbles up" to the div,
+                then to the body, then to the html, then to the Document itself. 
+                Modern browsers also bubble to a "window" object
+                
+                Event Capturing goes backwards: Window -> document -> 
+                html -> body -> div -> button
+        
+                what happens when someone performs an event is:
+                event capture happens, then the event at the element it was applied to,
+                then it bubbles back up.  -->
+
+                <div class="track"></div>
+                <p class="log"></p>
+        <ul id='menu'>
+                
+        </ul>
+
+        <script src="DOMpractice.js"></script>
+
+</body>
+</html>
